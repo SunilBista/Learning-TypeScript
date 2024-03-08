@@ -1,18 +1,32 @@
-const character = "mario";
+//arrays
+let names = ["sunil", "bista", "neil"];
 
-console.log(character);
-console.log("luigi");
+names.push("newName");
 
-const inputs = document.querySelectorAll("input");
+//names.push(12);
+//names[0] = 12;
 
-console.log("inputs", inputs);
+let numbers = [10, 20, 40];
 
-inputs.forEach((input) => {
-  console.log("input", input);
-});
+numbers.push(12);
 
-const circ = (diameter: number) => {
-  return diameter * Math.PI;
+//numbers.push('sunil');
+
+let mixedArray = ["sunil", 7, "bista", 8, 20];
+
+mixedArray.push("newString");
+mixedArray.push(12);
+mixedArray[0] = 1;
+
+//objects
+
+let newObject = {
+  name: "sunil",
+  sex: "male",
+  age: 26,
 };
 
-console.log("circle", circ(12));
+newObject.name = "bista";
+//newObject.age = 'twentysix';
+
+//We can update the newObject with object with same property name : it should match the same structure
