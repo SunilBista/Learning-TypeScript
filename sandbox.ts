@@ -1,18 +1,7 @@
-const character = "mario";
+//dynamic type (any) kinda like changes to javascript
 
-console.log(character);
-console.log("luigi");
+let age: any = 25;
 
-const inputs = document.querySelectorAll("input");
+let mixed: any[] = []; //dynamic type array
 
-console.log("inputs", inputs);
-
-inputs.forEach((input) => {
-  console.log("input", input);
-});
-
-const circ = (diameter: number) => {
-  return diameter * Math.PI;
-};
-
-console.log("circle", circ(12));
+let objectNew: { name: any; age: any };
