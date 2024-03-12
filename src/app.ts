@@ -1,29 +1,22 @@
-//Interface
-interface IsPerson {
-  name: string;
-  age: number;
-  speak(a: string): void;
-  spend(a: number): number;
-}
-
-const me: IsPerson = {
-  name: "sunil",
-  age: 30,
-  speak(text: string): void {
-    console.log(text);
-  },
-  spend(amount: number): number {
-    console.log("i Spent ", amount);
-    return amount;
-  },
-};
-console.log("Me", me);
-
 import { Invoice } from "./classes/invoice.js";
-const invoiceOne = new Invoice("Sunil", "painting", 100);
-console.log("invoiceOne", invoiceOne.format());
+import { Payment } from "./classes/payment.js";
+import { HasFormatter } from "./interfaces/HasFormatter.js";
 
-let invoices: Invoice[] = []; //objects created using the Invoice class
+// let docOne: HasFormatter;
+// let docTwo: HasFormatter;
+
+// docOne = new Invoice("sunil", "web work", 500);
+// docTwo = new Payment("bista", "gas work", 500);
+
+// let docs: HasFormatter[] = [];
+// docs.push(docOne);
+// docs.push(docTwo);
+
+// console.log(docs);
+// const invoiceOne = new Invoice("Sunil", "painting", 100);
+// console.log("invoiceOne", invoiceOne.format());
+
+// let invoices: Invoice[] = []; //objects created using the Invoice class
 
 const form = document.querySelector(".new-item-form") as HTMLFormElement; //typecasting
 
@@ -37,5 +30,34 @@ const amount = document.querySelector("#amount") as HTMLInputElement;
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
 
-  console.log(type.value, toFrom.value, details.value, amount.valueAsNumber);
+  let doc: HasFormatter;
+
+  if (type.value === "invoice") {
+    doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+  } else {
+    doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+  }
+
+  console.log(doc);
 });
+
+//Interface
+// interface IsPerson {
+//   name: string;
+//   age: number;
+//   speak(a: string): void;
+//   spend(a: number): number;
+// }
+
+// const me: IsPerson = {
+//   name: "sunil",
+//   age: 30,
+//   speak(text: string): void {
+//     console.log(text);
+//   },
+//   spend(amount: number): number {
+//     console.log("i Spent ", amount);
+//     return amount;
+//   },
+// };
+// console.log("Me", me);
