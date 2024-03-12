@@ -59,6 +59,11 @@ const docFour: Resource<string[]> = {
   data: ["bread", "roll"],
 };
 
+//tuples
+//type of data in each position is fixed once we define is
+
+let tup: [string, number, boolean] = ["sunil", 26, true];
+
 // let docOne: HasFormatter;
 // let docTwo: HasFormatter;
 

@@ -40,6 +40,9 @@ const docFour = {
     resourceName: "shopList",
     data: ["bread", "roll"],
 };
+//tuples
+//type of data in each position is fixed once we define is
+let tup = ["sunil", 26, true];
 // let docOne: HasFormatter;
 // let docTwo: HasFormatter;
 // docOne = new Invoice("sunil", "web work", 500);
