@@ -28,6 +28,37 @@ form.addEventListener("submit", (e: Event) => {
   list.render(doc, type.value, "end");
 });
 
+//Generics
+const addUID = <T extends object>(obj: T) => {
+  //generics captures the type of  the properties of an object
+  //use extends to
+  let uid = Math.floor(Math.random() * 100);
+  return { ...obj, uid };
+};
+
+let docOne = addUID({ name: "Sunil", age: 26 });
+
+console.log("docOne", docOne);
+
+//Interface and Generics
+interface Resource<T> {
+  uid: number;
+  resourceName: string;
+  data: T;
+}
+
+const docThree: Resource<string> = {
+  uid: 1,
+  resourceName: "person",
+  data: "shaun",
+};
+
+const docFour: Resource<string[]> = {
+  uid: 2,
+  resourceName: "shopList",
+  data: ["bread", "roll"],
+};
+
 // let docOne: HasFormatter;
 // let docTwo: HasFormatter;
 

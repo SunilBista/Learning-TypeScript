@@ -21,6 +21,25 @@ form.addEventListener("submit", (e) => {
     }
     list.render(doc, type.value, "end");
 });
+//Generics
+const addUID = (obj) => {
+    //generics captures the type of  the properties of an object
+    //use extends to
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+let docOne = addUID({ name: "Sunil", age: 26 });
+console.log("docOne", docOne);
+const docThree = {
+    uid: 1,
+    resourceName: "person",
+    data: "shaun",
+};
+const docFour = {
+    uid: 2,
+    resourceName: "shopList",
+    data: ["bread", "roll"],
+};
 // let docOne: HasFormatter;
 // let docTwo: HasFormatter;
 // docOne = new Invoice("sunil", "web work", 500);
