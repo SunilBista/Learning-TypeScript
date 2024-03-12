@@ -1,29 +1,4 @@
-"use strict";
-//https://www.typescriptlang.org/docs/
-// classes
-// class Invoice {
-//   client: string;
-//   details: string;
-//   amount: number;
-//   constructor(c: string, d: string, a: number) {
-//     this.client = c;
-//     this.details = d;
-//     this.amount = a;
-//   }
-//   format() {
-//     return `${this.client} owes ${this.amount} for ${this.details}`;
-//   }
-// }
-class Invoice {
-    constructor(client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    }
-    format() {
-        return `${this.client} owes ${this.amount} for ${this.details}`;
-    }
-}
+import { Invoice } from "./classes/invoice.js";
 const invoiceOne = new Invoice("Sunil", "painting", 100);
 console.log("invoiceOne", invoiceOne.format());
 let invoices = []; //objects created using the Invoice class
